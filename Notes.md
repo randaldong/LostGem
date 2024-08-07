@@ -4,7 +4,9 @@
 
 - Main Camera --> Rendering --> Anti-aliasing --> No Anti-aliasing
 
+## Inspector
 
+- `[Header("Section Name")]`
 
 ## Tilemap
 
@@ -72,9 +74,7 @@ Can change the settings in Project Settings --> Physics 2D, including Gravity (-
 
 
 
-### Controller
-
-#### Input System
+### Input Control
 
 Use the new Input System (the old one is not friendly to cross-platform input):
 
@@ -106,10 +106,40 @@ Default Input Action Automatically Created by Unity:
 
 
 
-Change direction, two methods:
+Player Controls:
+
+- move: change velocity (change gravity scale for best falling speed), flip face direction
+- jump: add jump force (refer to Unity Manual [Rigidbody2D.AddForce](https://docs.unity3d.com/ScriptReference/Rigidbody2D.AddForce.html))
+  - limit continuous jumping/limit to double jump/triple jump using custom collision detection
+  - player will stick to wall if keep pressing `A`/`D` (because of friction); fix: apply a Physics 2D Material with 0 friction to the collider
+  - player can move in the air; fix: disable movement input when in the air
+
+
+
+Change move direction, two methods:
 
 - `scale.x = -scale.x` :heavy_check_mark:
 - use the Flip property in Sprite Renderer (will flip according to pivot); however, components (like Rigidbody) will not flip
+
+
+
+## Physics Manager
+
+### Collision Detection
+
+Check where the collision is (relative to the object of interest)
+
+- add (collision) layer to the object
+
+
+
+
+
+Check collision object
+
+
+
+
 
 
 
