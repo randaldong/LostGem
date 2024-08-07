@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: Waterfall-left
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_AnimatedSprites:
+  - {fileID: 99235325, guid: bdf130f6562532841bf1d640bb3c292a, type: 3}
+  - {fileID: -1823514778, guid: bdf130f6562532841bf1d640bb3c292a, type: 3}
+  - {fileID: -936954037, guid: bdf130f6562532841bf1d640bb3c292a, type: 3}
+  - {fileID: 1213221277, guid: bdf130f6562532841bf1d640bb3c292a, type: 3}
+  m_MinSpeed: 6
+  m_MaxSpeed: 9
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0
