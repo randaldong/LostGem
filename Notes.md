@@ -132,6 +132,8 @@ Change move direction, two methods:
 
 ### Character Animation
 
+Basic animation
+
 - add `Animator` component to the player, create animator controller and drag it into Controller property of the component
 - create & edit animation clips in Animation Window, change sample rate (how many animation frames per second)
 - configure state in Animator Window 
@@ -139,7 +141,24 @@ Change move direction, two methods:
   - uncheck `Has Exit Time` & `Fixed Duration`
   - Transition Duration = 0
   - add parameter & condition
+  - (set Exit Time = 1 if want to play the full animation than transit)
 - using script to update the value of this parameter
+
+
+
+Animations that have multiple stages, using Blend Tree:
+
+- create separate animations for each stage
+- in Animator, delete individual states, Create State --> From New Blend Tree, rename, double click to edit it
+- choose Blend Type, Parameter, add Motions
+- uncheck Automate Thresholds and manually set them
+- using script to update the value of the parameter
+
+> :warning:
+>
+> If transit from Any State, remember to uncheck "Can Transition To Self", otherwise will cause infinite loop.
+>
+> If want to interrupt an animation in the middle (e.g., no landing if immediate walk/run), transit to exit
 
 
 

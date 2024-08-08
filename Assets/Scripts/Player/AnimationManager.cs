@@ -6,11 +6,13 @@ public class AnimationManager : MonoBehaviour
 {
 	private Animator animator;
 	private Rigidbody2D rb;
+	private PhysicsManager physicsManager;
 
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
+		physicsManager = GetComponent<PhysicsManager>();
 	}
 
 	private void Update()
@@ -21,5 +23,7 @@ public class AnimationManager : MonoBehaviour
 	private void SetAnimation()
 	{
 		animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x));
+		animator.SetFloat("velocityY", rb.velocity.y);
+		animator.SetBool("isOnGround", physicsManager.isOnGround);
 	}
 }
