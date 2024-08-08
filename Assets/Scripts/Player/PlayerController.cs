@@ -13,12 +13,14 @@ public class PlayerController : MonoBehaviour
 	private Rigidbody2D rb;
 	private PlayerInputControl inputControl;
 	private Vector2 moveDirection;
+	private PhysicsManager physicsManager;
 
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		inputControl = new PlayerInputControl();
 		moveDirection = new Vector2(0, 0);
+		physicsManager = GetComponent<PhysicsManager>();
 
 		inputControl.Gameplay.Jump.started += Jump;
 	}
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
 	private void Jump(InputAction.CallbackContext context)
 	{
-		rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+		if (physicsManager.isOnGround)
+			rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
 	}
 }

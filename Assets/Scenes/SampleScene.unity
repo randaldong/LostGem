@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 297862729}
   - component: {fileID: 297862728}
   - component: {fileID: 297862727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4908,7 +4908,10 @@ GameObject:
   - component: {fileID: 1359979847}
   - component: {fileID: 1359979850}
   - component: {fileID: 1359979849}
+  - component: {fileID: 1359979853}
   - component: {fileID: 1359979851}
+  - component: {fileID: 1359979852}
+  - component: {fileID: 1359979854}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4992,7 +4995,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1359979846}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 90ba6d9f3ed4b9e489069a4dbc5325ca, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5059,6 +5062,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 16
+--- !u!114 &1359979852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359979846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267ad15d673198f49b8b2646a01c9b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundGizmoOffset: {x: -0.08, y: 0}
+  groundGizmoRadius: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!95 &1359979853
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359979846}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ef1969148c01c3449f978dbd04e1bfa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1359979854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359979846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581c4313b68ff1a42aeedd85a2c38329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1371224245
 GameObject:
   m_ObjectHideFlags: 0

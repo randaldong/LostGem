@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_blue_2_0
+      name: walk-1
       rect:
         serializedVersion: 2
         x: 0
@@ -118,7 +118,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_1
+      name: walk-2
       rect:
         serializedVersion: 2
         x: 56
@@ -139,7 +139,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_2
+      name: walk-3
       rect:
         serializedVersion: 2
         x: 112
@@ -160,7 +160,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_3
+      name: walk-4
       rect:
         serializedVersion: 2
         x: 168
@@ -181,7 +181,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_4
+      name: walk-5
       rect:
         serializedVersion: 2
         x: 224
@@ -202,7 +202,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_5
+      name: walk-6
       rect:
         serializedVersion: 2
         x: 280
@@ -223,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_6
+      name: walk-7
       rect:
         serializedVersion: 2
         x: 336
@@ -244,7 +244,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_7
+      name: walk-8
       rect:
         serializedVersion: 2
         x: 392
@@ -265,7 +265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_8
+      name: walk-9
       rect:
         serializedVersion: 2
         x: 0
@@ -286,7 +286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_9
+      name: walk-10
       rect:
         serializedVersion: 2
         x: 56
@@ -307,7 +307,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_10
+      name: slide-start-1
       rect:
         serializedVersion: 2
         x: 0
@@ -328,7 +328,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_11
+      name: slide-start-2
       rect:
         serializedVersion: 2
         x: 56
@@ -349,7 +349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_12
+      name: slide-start-3
       rect:
         serializedVersion: 2
         x: 112
@@ -370,7 +370,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_13
+      name: slide-loop-1
       rect:
         serializedVersion: 2
         x: 168
@@ -391,7 +391,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_14
+      name: slide-loop-2
       rect:
         serializedVersion: 2
         x: 224
@@ -412,7 +412,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_15
+      name: slide-loop-3
       rect:
         serializedVersion: 2
         x: 280
@@ -433,7 +433,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_16
+      name: slide-end-1
       rect:
         serializedVersion: 2
         x: 336
@@ -454,7 +454,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_17
+      name: slide-end-2
       rect:
         serializedVersion: 2
         x: 392
@@ -475,7 +475,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_18
+      name: wall-slide-1
       rect:
         serializedVersion: 2
         x: 0
@@ -496,7 +496,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_19
+      name: wall-slide-2
       rect:
         serializedVersion: 2
         x: 56
@@ -517,7 +517,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_20
+      name: wall-slide-3
       rect:
         serializedVersion: 2
         x: 112
@@ -538,7 +538,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_21
+      name: wall-slide-4
       rect:
         serializedVersion: 2
         x: 168
@@ -559,7 +559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_22
+      name: attack-2-1
       rect:
         serializedVersion: 2
         x: 0
@@ -580,7 +580,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_23
+      name: attack-2-2
       rect:
         serializedVersion: 2
         x: 56
@@ -601,7 +601,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_24
+      name: attack-2-3
       rect:
         serializedVersion: 2
         x: 112
@@ -622,7 +622,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_25
+      name: attack-2-4
       rect:
         serializedVersion: 2
         x: 168
@@ -643,7 +643,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_26
+      name: attack-2-5
       rect:
         serializedVersion: 2
         x: 224
@@ -664,7 +664,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_27
+      name: attack-2-6
       rect:
         serializedVersion: 2
         x: 280
@@ -685,7 +685,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_28
+      name: attack-2-7
       rect:
         serializedVersion: 2
         x: 336
@@ -706,7 +706,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_29
+      name: attack-2-8
       rect:
         serializedVersion: 2
         x: 392
@@ -727,7 +727,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_30
+      name: ladder-climb-1
       rect:
         serializedVersion: 2
         x: 0
@@ -748,7 +748,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_31
+      name: ladder-climb-2
       rect:
         serializedVersion: 2
         x: 56
@@ -769,7 +769,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_32
+      name: ladder-climb-3
       rect:
         serializedVersion: 2
         x: 112
@@ -790,7 +790,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_33
+      name: ladder-climb-4
       rect:
         serializedVersion: 2
         x: 168
@@ -811,7 +811,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_34
+      name: ladder-climb-5
       rect:
         serializedVersion: 2
         x: 224
@@ -832,7 +832,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_35
+      name: ladder-climb-6
       rect:
         serializedVersion: 2
         x: 280
@@ -853,7 +853,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_36
+      name: ladder-climb-7
       rect:
         serializedVersion: 2
         x: 336
@@ -874,7 +874,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_37
+      name: ladder-climb-8
       rect:
         serializedVersion: 2
         x: 392
@@ -895,7 +895,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_38
+      name: ladder-climb-9
       rect:
         serializedVersion: 2
         x: 0
@@ -916,7 +916,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_blue_2_39
+      name: ladder-climb-10
       rect:
         serializedVersion: 2
         x: 56
@@ -947,46 +947,46 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      char_blue_2_0: 320384013
-      char_blue_2_1: -637095471
-      char_blue_2_10: -1921602454
-      char_blue_2_11: 112631477
-      char_blue_2_12: -54113232
-      char_blue_2_13: -1977563513
-      char_blue_2_14: -1892549771
-      char_blue_2_15: -520666678
-      char_blue_2_16: -1384752957
-      char_blue_2_17: 1148673384
-      char_blue_2_18: 535702762
-      char_blue_2_19: 824465522
-      char_blue_2_2: 1188995406
-      char_blue_2_20: 1017257645
-      char_blue_2_21: -1002894221
-      char_blue_2_22: -472493295
-      char_blue_2_23: 498834672
-      char_blue_2_24: 1514034093
-      char_blue_2_25: -1516421887
-      char_blue_2_26: 1588100864
-      char_blue_2_27: -1491102007
-      char_blue_2_28: -1864200871
-      char_blue_2_29: -483613593
-      char_blue_2_3: -248137811
-      char_blue_2_30: 927630889
-      char_blue_2_31: -27287923
-      char_blue_2_32: 1347238109
-      char_blue_2_33: 1091020013
-      char_blue_2_34: -1179591721
-      char_blue_2_35: 1696667774
-      char_blue_2_36: -1181541267
-      char_blue_2_37: -1365471522
-      char_blue_2_38: 1789335255
-      char_blue_2_39: -441082130
-      char_blue_2_4: 474990056
-      char_blue_2_5: 1515105252
-      char_blue_2_6: 768754265
-      char_blue_2_7: -744287249
-      char_blue_2_8: -727617918
-      char_blue_2_9: 1371150099
+      attack-2-1: -472493295
+      attack-2-2: 498834672
+      attack-2-3: 1514034093
+      attack-2-4: -1516421887
+      attack-2-5: 1588100864
+      attack-2-6: -1491102007
+      attack-2-7: -1864200871
+      attack-2-8: -483613593
+      ladder-climb-1: 927630889
+      ladder-climb-10: -441082130
+      ladder-climb-2: -27287923
+      ladder-climb-3: 1347238109
+      ladder-climb-4: 1091020013
+      ladder-climb-5: -1179591721
+      ladder-climb-6: 1696667774
+      ladder-climb-7: -1181541267
+      ladder-climb-8: -1365471522
+      ladder-climb-9: 1789335255
+      slide-end-1: -1384752957
+      slide-end-2: 1148673384
+      slide-loop-1: -1977563513
+      slide-loop-2: -1892549771
+      slide-loop-3: -520666678
+      slide-start-1: -1921602454
+      slide-start-2: 112631477
+      slide-start-3: -54113232
+      walk-1: 320384013
+      walk-10: 1371150099
+      walk-2: -637095471
+      walk-3: 1188995406
+      walk-4: -248137811
+      walk-5: 474990056
+      walk-6: 1515105252
+      walk-7: 768754265
+      walk-8: -744287249
+      walk-9: -727617918
+      wall-slide-1: 535702762
+      wall-slide-2: 824465522
+      wall-slide-3: 1017257645
+      wall-slide-4: -1002894221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
