@@ -162,9 +162,18 @@ Animations that have multiple stages, using Blend Tree:
 
 
 
+Add a new layer (can be sued to add a TAKE-DAMAGE FLASH effect)
+
+- Weight
+- Blending: Additive
+- create new state & animation that modifies Sprite Renderer --> Material Color
+- edit values for keyframes, modify Curves
+
+
+
 ## Physics Manager
 
-### Collision Detection
+### Collider
 
 Check where the collision is (relative to the object of interest)
 
@@ -172,11 +181,71 @@ Check where the collision is (relative to the object of interest)
 - use `OverlapCircle` to detect collision with objects of interest (can specify position & size of the detection area)
 - can visualize the gizmo when object is selected using `OnDrawGizmosSelected`
 
+> :warning:
+>
+> if you want to exclude collisions between specific objects, create & assign layers to them and  select their layers in Collider --> Layer Overrides --> Exclude Layers
+
+
+
+### Trigger
+
+No physics, can be used to trigger certain events like damage.
+
+- Edit Collider, select Is Trigger, Exclude Layers as needed
+- use `OnTriggerXXX` to trigger the behavior after collision
+
+
+
+## Event
+
+
+
+## Coroutine
+
+A coroutine is a method that you declare with an [IEnumerator](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerator) return type and with a [yield](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/yield) return statement included somewhere in the body. It will suspend its execution (yield) until the given [YieldInstruction](https://docs.unity3d.com/ScriptReference/YieldInstruction.html) finishes.
+
+- `yield return null`, pause execution and resumes in the next frame
+- `yield return new WaitForSeconds(float_time)`, pause for a period of time then continue following executions
+
+To set a coroutine running, you need to use the [StartCoroutine](https://docs.unity3d.com/ScriptReference/MonoBehaviour.StartCoroutine.html) function (`StartCoroutine(SomeMethod());`).
+
+To stop a coroutine (cancel/stop early), use [StopCoroutine](https://docs.unity3d.com/ScriptReference/MonoBehaviour.StopCoroutine.html) and [StopAllCoroutines](https://docs.unity3d.com/ScriptReference/MonoBehaviour.StopAllCoroutines.html).
+
+
+
+## Async/Await
+
+Coroutine is still linear, using the main thread; while async creates a new thread.
+
+[Unity async / await: Coroutine's Hot Sister [C# & Unity]](https://www.youtube.com/watch?v=WY-mk-ZGAq8&t=0s)
+
+[Unity async / await: Awaitable](https://www.youtube.com/watch?v=X9Dtb_4os1o)
+
+[Unity Async Await - Make Your Game Run Smoother!](https://www.youtube.com/watch?v=gxaJyuf-2dI)
 
 
 
 
-Check collision object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -223,5 +292,21 @@ Common functions:
 
 
 
+## Bugs
 
+### `OnTriggerStay2D()` works only when player is moving
+
+In the RigidBody2D component --> Sleeping Mode, select Never Sleep
+
+[Reference](https://stackoverflow.com/questions/66597912/method-ontriggerstay2d-works-only-when-player-is-moving)
+
+
+
+
+
+## Awesome Unity Packages
+
+[UniTask: Provides an efficient allocation free async/await integration for Unity.](https://github.com/Cysharp/UniTask)
+
+[ML-Agents: Machine Learning Agents Toolkit](https://github.com/Unity-Technologies/ml-agents)
 
