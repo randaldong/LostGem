@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
 	// Update physics
 	private void FixedUpdate()
 	{
-		Move();
+		if (!isFreeze)
+			Move();
 	}
 
 	private void Move()
@@ -68,7 +69,10 @@ public class PlayerController : MonoBehaviour
 
 	public void BounceAndFreeze(Transform attacker)
 	{
-		rb.velocity = Vector2.zero;
+		isFreeze = true;
+		float attackForce = attacker.GetComponent<StatSystem>().attackForce;
+		Vector2 forceDir = new Vector2(transform.position.x - attacker.position.x, 0).normalized;
+		rb.AddForce(forceDir * attackForce, ForceMode2D.Impulse);
 	}
 
 	public void GiveBackControl()

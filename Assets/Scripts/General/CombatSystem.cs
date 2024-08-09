@@ -43,12 +43,7 @@ public class CombatSystem : MonoBehaviour
 		}
 			
 	}
-	private void OnTriggerExit2D(Collider2D other)
-	{
-		Debug.Log("exit trigger");
-		// End take damage animation
 
-	}
 	IEnumerator TakeDamage(int value)
 	{
 		// Enable invincible
