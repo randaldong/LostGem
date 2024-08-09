@@ -9,7 +9,7 @@ public class CombatSystem : MonoBehaviour
 {
 	[Header("Take Damage")]
 	public UnityEvent<Transform> OnTakeDamage;
-	public UnityEvent OnExitTakeDamage;
+	public UnityEvent OnDead;
 
 
 
@@ -49,8 +49,15 @@ public class CombatSystem : MonoBehaviour
 		// Enable invincible
 		isInvincible = true;
 		// Take damage
-		if (stat.curHealth < value) stat.curHealth = 0;
-		else stat.curHealth -= value;
+		if (stat.curHealth <= value)
+		{ // Dead
+			stat.curHealth = 0;
+			OnDead?.Invoke();
+		}
+		else
+		{
+			stat.curHealth -= value;
+		}
 		// Trigger: 1) take damage animation; 2) bounce & freeze
 		OnTakeDamage?.Invoke(attacker);
 		// Wait for invincibility time
@@ -58,8 +65,6 @@ public class CombatSystem : MonoBehaviour
 		// Exit taking damage
 		// Disable invincible
 		isInvincible = false;
-		// Exit damage animation; get player control back
-		OnExitTakeDamage?.Invoke();
 
 	}
 }

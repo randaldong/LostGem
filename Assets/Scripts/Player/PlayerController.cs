@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
 
 	[HideInInspector] public bool isFreeze;
 
+
 	private Rigidbody2D rb;
 	private PlayerInputControl inputControl;
 	private Vector2 moveDirection;
 	private PhysicsSystem physics;
+	private StatSystem stat;
 
 	private void Awake()
 	{
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
 		inputControl = new PlayerInputControl();
 		moveDirection = new Vector2(0, 0);
 		physics = GetComponent<PhysicsSystem>();
+		stat = GetComponent<StatSystem>();
+
 
 		inputControl.Gameplay.Jump.started += Jump;
 	}
@@ -69,14 +73,18 @@ public class PlayerController : MonoBehaviour
 
 	public void BounceAndFreeze(Transform attacker)
 	{
+
 		isFreeze = true;
+		rb.velocity = Vector2.zero;
 		float attackForce = attacker.GetComponent<StatSystem>().attackForce;
 		Vector2 forceDir = new Vector2(transform.position.x - attacker.position.x, 0).normalized;
 		rb.AddForce(forceDir * attackForce, ForceMode2D.Impulse);
+
 	}
 
-	public void GiveBackControl()
+	public void Dead()
 	{
-
+		stat.isDead = true;
+		inputControl.Gameplay.Disable();
 	}
 }

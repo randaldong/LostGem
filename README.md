@@ -78,9 +78,15 @@ Add a TAKE-DAMAGE FLASH effect in a new layer
 Take damage:
 
 - after taking one damage, apply "Invincibility Frames" (using [Coroutine](https://docs.unity3d.com/Manual/Coroutines.html) vs. ​Async (implemented as [UniTask](https://github.com/Cysharp/UniTask)))
-- apply animation for taking damage & death
-- get bounced back a little bit & disable movement
+- apply animation for taking damage (may trigger lots of times in a short time, better to use a trigger instead of bool)
+- get bounced back a little bit & disable movement (freeze for a while)
 - can use `UnityEvent` for a series of events after taking damage
+
+
+
+Death:
+
+- after `curHealth == 0`, paly death animation (use bool), disable gameplay input control
 
 
 

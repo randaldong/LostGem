@@ -9,6 +9,7 @@ public class StatSystem : MonoBehaviour
     public float maxHealth;
     public float curHealth;
 	public float invincibleTime;
+	public bool isDead;
 
 	[Header("Attack")]
 	public int attackDamage;

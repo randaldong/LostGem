@@ -5127,9 +5127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e575e3df5b21a418d1830c104ab914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10
   curHealth: 100
   invincibleTime: 1
+  isDead: 0
   attackDamage: 0
   attackForce: 0
   attackRange: 0
@@ -5174,12 +5175,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnExitTakeDamage:
+  OnDead:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1359979854}
-        m_TargetAssemblyTypeName: AnimationManager, Assembly-CSharp
-        m_MethodName: ExitTakeDamage
+      - m_Target: {fileID: 1359979851}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Dead
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5562,6 +5563,7 @@ GameObject:
   - component: {fileID: 1586059574}
   - component: {fileID: 1586059573}
   - component: {fileID: 1586059579}
+  - component: {fileID: 1586059580}
   - component: {fileID: 1586059578}
   - component: {fileID: 1586059577}
   m_Layer: 8
@@ -5628,7 +5630,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -5725,8 +5727,9 @@ MonoBehaviour:
   maxHealth: 1000
   curHealth: 1000
   invincibleTime: 10
+  isDead: 0
   attackDamage: 5
-  attackForce: 10
+  attackForce: 5
   attackRange: 0
   attackSpeed: 0
   attackMode: 0
@@ -5745,7 +5748,7 @@ MonoBehaviour:
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
-  OnExitTakeDamage:
+  OnDead:
     m_PersistentCalls:
       m_Calls: []
 --- !u!70 &1586059579
@@ -5783,6 +5786,41 @@ CapsuleCollider2D:
   m_Offset: {x: -0.24061961, y: 0.6630194}
   m_Size: {x: 2.1042325, y: 1.3207029}
   m_Direction: 1
+--- !u!58 &1586059580
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586059572}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 375
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.12, y: 0.66}
+  serializedVersion: 2
+  m_Radius: 0.6
 --- !u!1 &1837121370
 GameObject:
   m_ObjectHideFlags: 0

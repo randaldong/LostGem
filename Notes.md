@@ -60,15 +60,13 @@
 
 
 
-## Player
-
 ### Layer
 
-- to put it in front of everything, a good practice is to create different sorting layers for different hierarchies, and put the character in a "bigger" layer
+- to put an object in front of everything, a good practice is to create different sorting layers for different hierarchies, and put the object in a "bigger" layer
 
 
 
-### Physics 2D
+## Physics 2D
 
 Can change the settings in Project Settings --> Physics 2D, including Gravity (-9.81 by default), Simulation Mode (Fixed Update by default, 0.02s per update)
 
@@ -79,9 +77,30 @@ Can change the settings in Project Settings --> Physics 2D, including Gravity (-
   - for the character, Capsule Collider 2D, edit collider to let it fit 
   - for the object , Tilemap Collider 2D (check Used By Composite to optimize, otherwise Unity will check collision with each tile), Composite Collider 2D (will automatically add a Rigidbody, set its Body Type as Static so it won't be affected by gravity/won't fall)
 
+### Collider
+
+Check where the collision is (relative to the object of interest)
+
+- add (collision) layer to the object (that will collide with our subject)
+- use `OverlapCircle` to detect collision with objects of interest (can specify position & size of the detection area)
+- can visualize the gizmo when object is selected using `OnDrawGizmosSelected`
+
+> :warning:
+>
+> if you want to exclude collisions between specific objects, create & assign layers to them and  select their layers in Collider --> Layer Overrides --> Exclude Layers
 
 
-### Input Control
+
+### Trigger
+
+No physics, can be used to trigger certain events like damage.
+
+- Edit Collider, select Is Trigger, Exclude Layers as needed
+- use `OnTriggerXXX` to trigger the behavior after collision
+
+
+
+## Input Control
 
 Use the new Input System (the old one is not friendly to cross-platform input):
 
@@ -130,7 +149,7 @@ Change move direction, two methods:
 
 
 
-### Character Animation
+## Animator & Animation
 
 Basic animation
 
@@ -145,6 +164,8 @@ Basic animation
 - using script to update the value of this parameter
 
 
+
+### Blend Tree
 
 Animations that have multiple stages, using Blend Tree:
 
@@ -162,6 +183,8 @@ Animations that have multiple stages, using Blend Tree:
 
 
 
+### Layer
+
 Add a new layer (can be sued to add a TAKE-DAMAGE FLASH effect)
 
 - Weight
@@ -171,28 +194,9 @@ Add a new layer (can be sued to add a TAKE-DAMAGE FLASH effect)
 
 
 
-## Physics Manager
+### Behavior
 
-### Collider
-
-Check where the collision is (relative to the object of interest)
-
-- add (collision) layer to the object (that will collide with our subject)
-- use `OverlapCircle` to detect collision with objects of interest (can specify position & size of the detection area)
-- can visualize the gizmo when object is selected using `OnDrawGizmosSelected`
-
-> :warning:
->
-> if you want to exclude collisions between specific objects, create & assign layers to them and  select their layers in Collider --> Layer Overrides --> Exclude Layers
-
-
-
-### Trigger
-
-No physics, can be used to trigger certain events like damage.
-
-- Edit Collider, select Is Trigger, Exclude Layers as needed
-- use `OnTriggerXXX` to trigger the behavior after collision
+Execute functions during this animation. Inherit from [`StateMachineBehaviour`](https://docs.unity3d.com/ScriptReference/StateMachineBehaviour.html)
 
 
 
