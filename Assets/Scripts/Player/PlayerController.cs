@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 	public float moveSpeed = 10;
 	public float jumpForce = 16;
 
+	[HideInInspector] public bool isFreeze;
+
 	private Rigidbody2D rb;
 	private PlayerInputControl inputControl;
 	private Vector2 moveDirection;
@@ -62,5 +64,15 @@ public class PlayerController : MonoBehaviour
 	{
 		if (physics.isOnGround)
 			rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+	}
+
+	public void BounceAndFreeze(Transform attacker)
+	{
+		rb.velocity = Vector2.zero;
+	}
+
+	public void GiveBackControl()
+	{
+
 	}
 }

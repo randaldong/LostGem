@@ -15,8 +15,9 @@ public class CombatSystem : MonoBehaviour
 
 	private StatSystem stat;
 	private bool isInvincible = false;
-	private Transform attackerTransform;
+	private Transform attacker;
 	private StatSystem attackerStat;
+	private PlayerController controller;
 
 	private void Awake()
 	{
@@ -30,14 +31,14 @@ public class CombatSystem : MonoBehaviour
 		if (!attackerStat)
 		{
 			attackerStat = other.GetComponent<StatSystem>();
-			attackerTransform = other.transform;
+			attacker = other.transform;
 		}
 
 		if (attackerStat.attackMode == StatSystem.AttackMode.Touch)
 		{
 			while (!isInvincible)
 			{
-				StartCoroutine(TakeDamage(attackerStat.damage));
+				StartCoroutine(TakeDamage(attackerStat.attackDamage));
 			}
 		}
 			
@@ -55,12 +56,14 @@ public class CombatSystem : MonoBehaviour
 		// Take damage
 		if (stat.curHealth < value) stat.curHealth = 0;
 		else stat.curHealth -= value;
-		// Trigger take damage animation
-		OnTakeDamage?.Invoke(attackerTransform);
+		// Trigger: 1) take damage animation; 2) bounce & freeze
+		OnTakeDamage?.Invoke(attacker);
 		// Wait for invincibility time
 		yield return new WaitForSeconds(stat.invincibleTime);
 		// Exit taking damage
+		// Disable invincible
 		isInvincible = false;
+		// Exit damage animation; get player control back
 		OnExitTakeDamage?.Invoke();
 
 	}
