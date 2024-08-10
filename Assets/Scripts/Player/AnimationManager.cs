@@ -36,4 +36,9 @@ public class AnimationManager : MonoBehaviour
 		animator.SetTrigger("takeDamage");
 	}
 
+	public void PlayPlayerAttack()
+	{
+		animator.SetTrigger("attack");
+	}
+
 }

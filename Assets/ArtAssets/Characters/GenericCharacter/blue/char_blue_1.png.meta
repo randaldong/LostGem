@@ -349,7 +349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-1-7
+      name: attack-2-1
       rect:
         serializedVersion: 2
         x: 336
@@ -370,7 +370,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-1-8
+      name: attack-2-2
       rect:
         serializedVersion: 2
         x: 392
@@ -1541,8 +1541,8 @@ TextureImporter:
       attack-1-4: -1011970676
       attack-1-5: -655884650
       attack-1-6: -2010392887
-      attack-1-7: 402499099
-      attack-1-8: -1347657440
+      attack-2-1: 402499099
+      attack-2-2: -1347657440
       crouch-1: -2084116837
       crouch-2: -144686282
       crouch-3: -1541610224

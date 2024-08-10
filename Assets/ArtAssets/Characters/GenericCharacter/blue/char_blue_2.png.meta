@@ -559,7 +559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-2-1
+      name: attack-3-1
       rect:
         serializedVersion: 2
         x: 0
@@ -580,7 +580,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-2-2
+      name: attack-3-2
       rect:
         serializedVersion: 2
         x: 56
@@ -601,7 +601,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-2-3
+      name: attack-3-3
       rect:
         serializedVersion: 2
         x: 112
@@ -622,7 +622,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-2-4
+      name: attack-3-4
       rect:
         serializedVersion: 2
         x: 168
@@ -643,7 +643,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-2-5
+      name: attack-3-5
       rect:
         serializedVersion: 2
         x: 224
@@ -664,7 +664,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-2-6
+      name: attack-3-6
       rect:
         serializedVersion: 2
         x: 280
@@ -685,7 +685,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-2-7
+      name: attack-3-7
       rect:
         serializedVersion: 2
         x: 336
@@ -706,7 +706,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attack-2-8
+      name: attack-3-8
       rect:
         serializedVersion: 2
         x: 392
@@ -947,14 +947,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      attack-2-1: -472493295
-      attack-2-2: 498834672
-      attack-2-3: 1514034093
-      attack-2-4: -1516421887
-      attack-2-5: 1588100864
-      attack-2-6: -1491102007
-      attack-2-7: -1864200871
-      attack-2-8: -483613593
+      attack-3-1: -472493295
+      attack-3-2: 498834672
+      attack-3-3: 1514034093
+      attack-3-4: -1516421887
+      attack-3-5: 1588100864
+      attack-3-6: -1491102007
+      attack-3-7: -1864200871
+      attack-3-8: -483613593
       ladder-climb-1: 927630889
       ladder-climb-10: -441082130
       ladder-climb-2: -27287923

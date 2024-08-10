@@ -185,7 +185,7 @@ Animations that have multiple stages, using Blend Tree:
 
 ### Layer
 
-Add a new layer (can be sued to add a TAKE-DAMAGE FLASH effect)
+A good practice is to use layers for different animations:
 
 - Weight
 - Blending: Additive
@@ -201,6 +201,17 @@ Execute functions during this animation. Inherit from [`StateMachineBehaviour`](
 
 
 ## Combat System
+
+### Combo Attack
+
+3-hit combo attack
+
+- click once to perform state-1
+  - before state-1 ends (say, 90%), if not click again, exit
+  - before state-1 ends (say, 90%), if click again, interrupt state-1, enter into state-2
+    - before state-2 ends, if not click again, exit
+    - before state-2 ends, if click again, interrupt state-2, enter into state-3
+- can be implemented with trigger
 
 
 

@@ -94,7 +94,8 @@ Death:
 
 - [ ] `attackMode`: {Touch, Hit}
 
-
+- click mouse left button to perform attack
+- 3-hit combo attack
 
 ## Combat System
 

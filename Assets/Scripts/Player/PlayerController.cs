@@ -12,12 +12,12 @@ public class PlayerController : MonoBehaviour
 
 	[HideInInspector] public bool isFreeze;
 
-
 	private Rigidbody2D rb;
 	private PlayerInputControl inputControl;
 	private Vector2 moveDirection;
 	private PhysicsSystem physics;
 	private StatSystem stat;
+	private AnimationManager anim;
 
 	private void Awake()
 	{
@@ -26,9 +26,13 @@ public class PlayerController : MonoBehaviour
 		moveDirection = new Vector2(0, 0);
 		physics = GetComponent<PhysicsSystem>();
 		stat = GetComponent<StatSystem>();
+		anim = GetComponent<AnimationManager>();
 
-
+		// Jump
 		inputControl.Gameplay.Jump.started += Jump;
+
+		// Attack
+		inputControl.Gameplay.Attack.started += PlayerAttack;
 	}
 
 	private void OnEnable()
@@ -71,6 +75,12 @@ public class PlayerController : MonoBehaviour
 			rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
 	}
 
+	private void PlayerAttack(InputAction.CallbackContext context)
+	{
+		anim.PlayPlayerAttack();
+	}
+
+	#region UnityEvent
 	public void BounceAndFreeze(Transform attacker)
 	{
 
@@ -87,4 +97,5 @@ public class PlayerController : MonoBehaviour
 		stat.isDead = true;
 		inputControl.Gameplay.Disable();
 	}
+	#endregion
 }
