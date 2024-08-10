@@ -5,7 +5,7 @@ using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.Events;
 
-public class CombatSystem : MonoBehaviour
+public class DamageHandler : MonoBehaviour
 {
 	[Header("Take Damage")]
 	public UnityEvent<Transform> OnTakeDamage;
@@ -13,32 +13,32 @@ public class CombatSystem : MonoBehaviour
 
 
 
-	private StatSystem stat;
+	private HealthStat health;
 	private bool isInvincible = false;
 	private Transform attacker;
-	private StatSystem attackerStat;
+	private AttackStat attack;
 	private PlayerController controller;
 
 	private void Awake()
 	{
-		stat = GetComponent<StatSystem>();
+		health = GetComponent<HealthStat>();
 	}
 
 
 	// For damage cause by Touch Attack
 	private void OnTriggerStay2D(Collider2D other)
 	{
-		if (!attackerStat)
+		if (!attack)
 		{
-			attackerStat = other.GetComponent<StatSystem>();
+			attack = other.GetComponent<AttackStat>();
 			attacker = other.transform;
 		}
 
-		if (attackerStat.attackMode == StatSystem.AttackMode.Touch)
+		if (attack.attackMode == AttackStat.AttackMode.Touch)
 		{
 			while (!isInvincible)
 			{
-				StartCoroutine(TakeDamage(attackerStat.attackDamage));
+				StartCoroutine(TakeDamage(attack.attackDamage));
 			}
 		}
 			
@@ -49,19 +49,19 @@ public class CombatSystem : MonoBehaviour
 		// Enable invincible
 		isInvincible = true;
 		// Take damage
-		if (stat.curHealth <= value)
+		if (health.curHealth <= value)
 		{ // Dead
-			stat.curHealth = 0;
+			health.curHealth = 0;
 			OnDead?.Invoke();
 		}
 		else
 		{
-			stat.curHealth -= value;
+			health.curHealth -= value;
 		}
 		// Trigger: 1) take damage animation; 2) bounce & freeze
 		OnTakeDamage?.Invoke(attacker);
 		// Wait for invincibility time
-		yield return new WaitForSeconds(stat.invincibleTime);
+		yield return new WaitForSeconds(health.invincibleTime);
 		// Exit taking damage
 		// Disable invincible
 		isInvincible = false;

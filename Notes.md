@@ -212,6 +212,9 @@ Execute functions during this animation. Inherit from [`StateMachineBehaviour`](
     - before state-2 ends, if not click again, exit
     - before state-2 ends, if click again, interrupt state-2, enter into state-3
 - can be implemented with trigger
+- when to apply attack? 
+  - choose a specific frame, use Polygon Collider 2D (trigger) to draw the attack area, only activate the trigger on this frame (in animation)
+  - when target falls into this area (trigger), apply damage
 
 
 

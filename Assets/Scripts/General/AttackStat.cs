@@ -2,16 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatSystem : MonoBehaviour
+public class AttackStat : MonoBehaviour
 {
-	// Inspector
-    [Header("Health")]
-    public float maxHealth;
-    public float curHealth;
-	public float invincibleTime;
-	public bool isDead;
-
-	[Header("Attack")]
 	public int attackDamage;
 	public float attackForce;
 	public float attackRange;
@@ -20,18 +12,10 @@ public class StatSystem : MonoBehaviour
 
 
 	// Hide from inspector
-	[HideInInspector]public enum AttackMode
+	[HideInInspector]
+	public enum AttackMode
 	{
 		Touch, // cause damage if touched
 		Hit, // cause damage if attack & hit
 	}
-
-	
-
-	private void Start()
-	{
-		curHealth = maxHealth;
-	}
-	
-	
 }

@@ -7,14 +7,14 @@ public class AnimationManager : MonoBehaviour
 	private Animator animator;
 	private Rigidbody2D rb;
 	private PhysicsSystem physics;
-	private StatSystem stat;
+	private HealthStat health;
 
 	private void Awake()
 	{
 		animator = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 		physics = GetComponent<PhysicsSystem>();
-		stat = GetComponent<StatSystem>();
+		health = GetComponent<HealthStat>();
 	}
 
 	private void Update()
@@ -27,7 +27,7 @@ public class AnimationManager : MonoBehaviour
 		animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x)); // walk, run
 		animator.SetFloat("velocityY", rb.velocity.y); // jump-air
 		animator.SetBool("isOnGround", physics.isOnGround); // jump-land
-		animator.SetBool("isDead", stat.isDead); // death
+		animator.SetBool("isDead", health.isDead); // death
 
 	}
 
