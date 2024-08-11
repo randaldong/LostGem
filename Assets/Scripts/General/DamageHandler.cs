@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.Events;
+using System.Drawing;
 
 public class DamageHandler : MonoBehaviour
 {
@@ -32,11 +33,21 @@ public class DamageHandler : MonoBehaviour
 		{
 			attack = other.GetComponent<AttackStat>();
 			attacker = other.transform;
-		}
+			Debug.Log(other.gameObject.name + " attack " + gameObject.name);
 
+		}
+		Debug.Log(other.tag);
+		if (other.tag == "Attack") return;
 		if (attack.attackMode == AttackStat.AttackMode.Touch)
 		{
-			while (!isInvincible)
+			while (!isInvincible) // continous damage for touch attack
+			{
+				StartCoroutine(TakeDamage(attack.attackDamage));
+			}
+		}
+		else if (attack.attackMode == AttackStat.AttackMode.Hit)
+		{
+			if (!isInvincible) // one-time damage for hit attack
 			{
 				StartCoroutine(TakeDamage(attack.attackDamage));
 			}

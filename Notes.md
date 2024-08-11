@@ -63,6 +63,7 @@
 ### Layer
 
 - to put an object in front of everything, a good practice is to create different sorting layers for different hierarchies, and put the object in a "bigger" layer
+- to prioritize a collider (e.g., collider to take damage), set a larger "Layer Override Priority"
 
 
 
