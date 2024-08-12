@@ -31,7 +31,9 @@
 
 
 
-### Monsters
+### Mobs
+
+Using class inheritance.
 
 #### Boar
 
