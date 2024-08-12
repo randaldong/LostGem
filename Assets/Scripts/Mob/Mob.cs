@@ -43,11 +43,14 @@ public class Mob : MonoBehaviour
 	}
 	private void FixedUpdate()
 	{
-		Move();
+		if (!isWait)
+			Move();
 	}
 
 	public virtual void Move()
 	{
+		anim.SetBool("isWalk", true);
+
 		rb.velocity = new Vector2(curSpeed * faceDir.x, rb.velocity.y);
 	}
 

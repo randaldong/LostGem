@@ -5990,7 +5990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 1.5
   runSpeed: 3.5
-  hitWallFreezeTime: 1
+  hitWallFreezeTime: 3
 --- !u!114 &1586059585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6007,8 +6007,8 @@ MonoBehaviour:
   groundGizmoRadius: 0.2
   leftWallGizmoOffset: {x: -2, y: 0.6}
   leftWallGizmoRadius: 0.2
-  rightWallGizmoOffset: {x: 0, y: 0}
-  rightWallGizmoRadius: 0
+  rightWallGizmoOffset: {x: 1.9, y: 0.6}
+  rightWallGizmoRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64

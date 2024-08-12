@@ -7,6 +7,5 @@ public class Boar : Mob
 	public override void Move()
 	{
 		base.Move();
-		anim.SetBool("isWalk", true);
 	}
 }
