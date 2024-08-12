@@ -97,6 +97,7 @@ Death:
 - click mouse left button to perform attack
 - 3-hit combo attack (transit by trigger)
 - apply attack (enemy falls into attack area)
+- disable "attack while moving" (for there's no lower body animation for that) using `StateMachineBehaviour`
 
 ## Combat System
 
