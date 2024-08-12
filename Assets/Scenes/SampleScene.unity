@@ -4568,7 +4568,7 @@ GameObject:
   - component: {fileID: 512845212}
   - component: {fileID: 512845213}
   - component: {fileID: 512845214}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Attack-1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4605,7 +4605,7 @@ PolygonCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 1783
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5008,7 +5008,7 @@ GameObject:
   - component: {fileID: 1204139308}
   - component: {fileID: 1204139310}
   - component: {fileID: 1204139309}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Attack-3
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5062,7 +5062,7 @@ PolygonCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 1783
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5209,7 +5209,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 695
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5333,7 +5333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a0a59ba810ae04dae3dc3195a76888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackerType: 1
+  attackerType: 2
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -5880,7 +5880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a0a59ba810ae04dae3dc3195a76888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackerType: 0
+  attackerType: 1
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -5899,9 +5899,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059b6d4e067bf2f46808ae2cfee20605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  curHealth: 10
-  invincibleTime: 1
+  maxHealth: 100
+  curHealth: 100
+  invincibleTime: 0
   isDead: 0
 --- !u!61 &1586059582
 BoxCollider2D:
@@ -5918,7 +5918,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 1335
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5957,7 +5957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648034056}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: AttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6233,7 +6233,7 @@ GameObject:
   - component: {fileID: 2097300042}
   - component: {fileID: 2097300044}
   - component: {fileID: 2097300043}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Attack
   m_TagString: Mob
   m_Icon: {fileID: 0}
@@ -6287,7 +6287,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 375
+    m_Bits: 1911
   m_LayerOverridePriority: 10
   m_ForceSendLayers:
     serializedVersion: 2
@@ -6318,7 +6318,7 @@ GameObject:
   - component: {fileID: 2141749532}
   - component: {fileID: 2141749534}
   - component: {fileID: 2141749533}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Attack-2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6372,7 +6372,7 @@ PolygonCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 247
+    m_Bits: 1783
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

@@ -5,6 +5,7 @@ using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.Events;
 using System.Drawing;
+using Unity.VisualScripting;
 
 public class HealthManager : MonoBehaviour
 {
@@ -33,32 +34,35 @@ public class HealthManager : MonoBehaviour
 	// For damage cause by Touch Attack
 	private void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.CompareTag(attackerType.ToString()))
+		if (!other.CompareTag(attackerType.ToString())) return;
+
+		attack = other.GetComponent<AttackStat>();
+		if (attack.attackMode != AttackStat.AttackMode.Touch) return;
+
+		attacker = other.transform;
+
+		if (!isInvincible) // continous damage for touch attack
 		{
-			attack = other.GetComponent<AttackStat>();
-			attacker = other.transform;
-
-			if (attack.attackMode == AttackStat.AttackMode.Touch)
-			{
-				while (!isInvincible) // continous damage for touch attack
-				{
-					StartCoroutine(TakeDamage(attack.attackDamage));
-				}
-			}
-			else if (attack.attackMode == AttackStat.AttackMode.Hit)
-			{
-				if (!isInvincible) // one-time damage for hit attack
-				{
-					StartCoroutine(TakeDamage(attack.attackDamage));
-				}
-			}
+			StartCoroutine(TakeTouchDamage(attack.attackDamage));
 		}
-
-		
-			
 	}
 
-	IEnumerator TakeDamage(int value)
+	// For damage cause by Hit Attack
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (!other.CompareTag(attackerType.ToString())) return;
+
+		attack = other.GetComponent<AttackStat>();
+		if (attack.attackMode != AttackStat.AttackMode.Hit) return;
+
+		attacker = other.transform;
+
+		// one-time damage for hit attack
+		TakeHitDamage(attack.attackDamage);
+		
+	}
+
+	IEnumerator TakeTouchDamage(int value)
 	{
 		// Enable invincible
 		isInvincible = true;
@@ -76,9 +80,24 @@ public class HealthManager : MonoBehaviour
 		OnTakeDamage?.Invoke(attacker);
 		// Wait for invincibility time
 		yield return new WaitForSeconds(health.invincibleTime);
-		// Exit taking damage
 		// Disable invincible
 		isInvincible = false;
 
+	}
+
+	private void TakeHitDamage(int value)
+	{
+		// Take damage
+		if (health.curHealth <= value)
+		{ // Dead
+			health.curHealth = 0;
+			OnDead?.Invoke();
+		}
+		else
+		{
+			health.curHealth -= value;
+		}
+		// Trigger: 1) take damage animation; 2) bounce & freeze
+		OnTakeDamage?.Invoke(attacker);
 	}
 }
