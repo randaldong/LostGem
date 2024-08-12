@@ -6,19 +6,23 @@ using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.Events;
 using System.Drawing;
 
-public class DamageHandler : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
-	[Header("Take Damage")]
+	[SerializeField] private AttackerType attackerType=AttackerType.Untagged;
 	public UnityEvent<Transform> OnTakeDamage;
 	public UnityEvent OnDead;
-
-
 
 	private HealthStat health;
 	private bool isInvincible = false;
 	private Transform attacker;
 	private AttackStat attack;
-	private PlayerController controller;
+
+	private enum AttackerType
+	{
+		Untagged,
+		Player,
+		Mob,
+	};
 
 	private void Awake()
 	{
@@ -29,29 +33,28 @@ public class DamageHandler : MonoBehaviour
 	// For damage cause by Touch Attack
 	private void OnTriggerStay2D(Collider2D other)
 	{
-		if (!attack)
+		if (other.CompareTag(attackerType.ToString()))
 		{
 			attack = other.GetComponent<AttackStat>();
 			attacker = other.transform;
-			Debug.Log(other.gameObject.name + " attack " + gameObject.name);
 
-		}
-		Debug.Log(other.tag);
-		if (other.tag == "Attack") return;
-		if (attack.attackMode == AttackStat.AttackMode.Touch)
-		{
-			while (!isInvincible) // continous damage for touch attack
+			if (attack.attackMode == AttackStat.AttackMode.Touch)
 			{
-				StartCoroutine(TakeDamage(attack.attackDamage));
+				while (!isInvincible) // continous damage for touch attack
+				{
+					StartCoroutine(TakeDamage(attack.attackDamage));
+				}
+			}
+			else if (attack.attackMode == AttackStat.AttackMode.Hit)
+			{
+				if (!isInvincible) // one-time damage for hit attack
+				{
+					StartCoroutine(TakeDamage(attack.attackDamage));
+				}
 			}
 		}
-		else if (attack.attackMode == AttackStat.AttackMode.Hit)
-		{
-			if (!isInvincible) // one-time damage for hit attack
-			{
-				StartCoroutine(TakeDamage(attack.attackDamage));
-			}
-		}
+
+		
 			
 	}
 
