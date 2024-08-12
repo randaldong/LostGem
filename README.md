@@ -33,7 +33,10 @@
 
 ### Mobs
 
-Using class inheritance.
+Using OOP:
+
+- virtual function; override
+- access modifiers
 
 #### Boar
 
@@ -47,13 +50,19 @@ Using class inheritance.
 
 ## Animator System
 
+Transition condition: bool, trigger, value
+
 ### Idle
 
 ### Walk
 
+Character: velocity value, decided by controller
+
+Boar: `isWalk` bool
+
 ### Run
 
-
+Boar: if detects player/attacked by player
 
 ### Jump
 
@@ -100,6 +109,24 @@ Death:
 - 3-hit combo attack (transit by trigger)
 - apply attack (enemy falls into attack area)
 - disable "attack while moving" (for there's no lower body animation for that) using `StateMachineBehaviour`
+
+
+
+## Physics System
+
+### Attack Area
+
+### Wall
+
+when hit wall:
+
+- `curSpeed = 0`
+- animation switch to `Idle`
+- wait for a few seconds to turn around
+- play `Walk` animation
+- set back `curSpeed`
+
+
 
 ## Combat System
 

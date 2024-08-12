@@ -5,26 +5,48 @@ using UnityEngine;
 public class PhysicsSystem : MonoBehaviour
 {
 	[Header("Collision Detection Gizmo")]
-	[SerializeField] private Vector2 groundGizmoOffset = new Vector2(-0.08f, 0);
-	[SerializeField] private float groundGizmoRadius = 0.2f;
+	[SerializeField] private Vector2 groundGizmoOffset;
+	[SerializeField] private float groundGizmoRadius;
+	[SerializeField] private Vector2 leftWallGizmoOffset;
+	[SerializeField] private float leftWallGizmoRadius;
+	[SerializeField] private Vector2 rightWallGizmoOffset;
+	[SerializeField] private float rightWallGizmoRadius;
+
 
 	[Header("Layer Masks")]
 	[SerializeField] private LayerMask groundLayer;
 
-	[System.NonSerialized] public bool isOnGround = false;
-	[System.NonSerialized] public bool isOnWall = false;
+	[System.NonSerialized] public bool isHitGround = false;
+	[System.NonSerialized] public bool isLeftHitWall = false;
+	[System.NonSerialized] public bool isRightHitWall = false;
+
 
 	private void Update()
 	{
-		CheckOnGround();	
+		CheckHit();	
 	}
 
-	// On the ground
-	private void CheckOnGround()
+	
+	private void CheckHit()
 	{
-		isOnGround = Physics2D.OverlapCircle(
+		// Hit ground
+		isHitGround = Physics2D.OverlapCircle(
 			(Vector2)transform.position + groundGizmoOffset, 
 			groundGizmoRadius, 
+			groundLayer
+		);
+
+		// Left hit wall
+		isLeftHitWall = Physics2D.OverlapCircle(
+			(Vector2)transform.position + leftWallGizmoOffset,
+			leftWallGizmoRadius,
+			groundLayer
+		);
+
+		// Right hit wall
+		isRightHitWall = Physics2D.OverlapCircle(
+			(Vector2)transform.position + rightWallGizmoOffset,
+			rightWallGizmoRadius,
 			groundLayer
 		);
 	}
@@ -33,7 +55,11 @@ public class PhysicsSystem : MonoBehaviour
 	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.red;
-
 		Gizmos.DrawWireSphere((Vector2)transform.position + groundGizmoOffset, groundGizmoRadius);
+		Gizmos.color = Color.green;
+		Gizmos.DrawWireSphere((Vector2)transform.position + leftWallGizmoOffset, leftWallGizmoRadius);
+		Gizmos.color = Color.blue;
+		Gizmos.DrawWireSphere((Vector2)transform.position + rightWallGizmoOffset, rightWallGizmoRadius);
+
 	}
 }

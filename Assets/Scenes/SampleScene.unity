@@ -3537,7 +3537,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -5285,6 +5285,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundGizmoOffset: {x: -0.12, y: 0}
   groundGizmoRadius: 0.2
+  leftWallGizmoOffset: {x: 0, y: 0}
+  leftWallGizmoRadius: 0
+  rightWallGizmoOffset: {x: 0, y: 0}
+  rightWallGizmoRadius: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -5767,6 +5771,8 @@ GameObject:
   - component: {fileID: 1586059581}
   - component: {fileID: 1586059578}
   - component: {fileID: 1586059583}
+  - component: {fileID: 1586059584}
+  - component: {fileID: 1586059585}
   m_Layer: 8
   m_Name: Boar
   m_TagString: Untagged
@@ -5970,6 +5976,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1586059584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586059572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b950aef49df3740b13f704930ea8d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1.5
+  runSpeed: 3.5
+  hitWallFreezeTime: 1
+--- !u!114 &1586059585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586059572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267ad15d673198f49b8b2646a01c9b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundGizmoOffset: {x: -0.08, y: 0}
+  groundGizmoRadius: 0.2
+  leftWallGizmoOffset: {x: -2, y: 0.6}
+  leftWallGizmoRadius: 0.2
+  rightWallGizmoOffset: {x: 0, y: 0}
+  rightWallGizmoRadius: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1648034055
 GameObject:
   m_ObjectHideFlags: 0

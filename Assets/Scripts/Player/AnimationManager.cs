@@ -26,7 +26,7 @@ public class AnimationManager : MonoBehaviour
 	{
 		animator.SetFloat("velocityX", Mathf.Abs(rb.velocity.x)); // walk, run
 		animator.SetFloat("velocityY", rb.velocity.y); // jump-air
-		animator.SetBool("isOnGround", physics.isOnGround); // jump-land
+		animator.SetBool("isOnGround", physics.isHitGround); // jump-land
 		animator.SetBool("isDead", health.isDead); // death
 
 	}

@@ -76,7 +76,7 @@ Can change the settings in Project Settings --> Physics 2D, including Gravity (-
   - switch Collision Detection to Continuous for higher accuracy when the character could have lots of moves & collisions
 - Collider 2D
   - for the character, Capsule Collider 2D, edit collider to let it fit 
-  - for the object , Tilemap Collider 2D (check Used By Composite to optimize, otherwise Unity will check collision with each tile), Composite Collider 2D (will automatically add a Rigidbody, set its Body Type as Static so it won't be affected by gravity/won't fall)
+  - for the object , Tilemap Collider 2D (select Used By Composite to optimize, otherwise Unity will check collision with each tile; also switch Geometry Type from Outlines to Polygons, otherwise collision will not be detected once object goes through it), Composite Collider 2D (will automatically add a Rigidbody, set its Body Type as Static so it won't be affected by gravity/won't fall)
 
 ### Collider
 
@@ -250,7 +250,7 @@ Coroutine is still linear, using the main thread; while async creates a new thre
 
 
 
-
+## OOP
 
 
 

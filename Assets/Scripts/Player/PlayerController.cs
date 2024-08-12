@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
 	private void Jump(InputAction.CallbackContext context)
 	{
-		if (physics.isOnGround)
+		if (physics.isHitGround)
 			rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
 	}
 
