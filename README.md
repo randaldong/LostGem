@@ -58,7 +58,7 @@ Transition condition: bool, trigger, value
 
 Character: velocity value, decided by controller
 
-Boar: `isWalk` bool
+Boar: `isWalk` bool --> idle, `isRun` bool --> walk; hit wall, wait for a few seconds, turn around, walk
 
 ### Run
 
